@@ -35,7 +35,6 @@ stream_t * stream_make(void *v, ...) {
 }
 
 bool_t stream_empty(stream_t *st) {
-//	if(!st || !st->headValue) return BOOL_TRUE;
 	if(!st) return BOOL_TRUE;
 
 	return BOOL_FALSE;
@@ -285,6 +284,7 @@ stream_t * stream_filter(stream_t *st, ret_t (*filter)(void *, void *), void *ar
 	}
 
 	while(1) {
+		narg = arg;
 		if(!arg) {
 			narg = st->arg;
 		}
@@ -382,7 +382,6 @@ ret_t stream_generic_scaler(void *k, void *arg) {
 	RET_INIT;
 	long v = (long) k, factor = (long) arg;
 	if(arg) {
-		long factor = (long)arg;
 		v = v * factor;
 		RET_OK((void *)v);
 	}

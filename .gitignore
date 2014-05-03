@@ -1,4 +1,5 @@
 libret-c
 core
 run-test
+run-sieve
 *.o
